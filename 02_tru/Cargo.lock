@@ -47,14 +47,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6184e33543162437515c2e2b48714794e37845ec9851711914eec9d308f6ebe8"
 
 [[package]]
-name = "hello"
-version = "0.1.0"
-dependencies = [
- "assert_cmd",
- "pretty_assertions",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.191"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -163,6 +155,14 @@ name = "termtree"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f50febec83f5ee1df3015341d8bd429f2d1cc62bcba7ea2076759d315084683"
+
+[[package]]
+name = "tru"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+ "pretty_assertions",
+]
 
 [[package]]
 name = "unicode-ident"
