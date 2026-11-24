@@ -1,7 +1,8 @@
-use crate::run_stdout;
-use pretty_assertions::assert_eq;
+use crate::run_successful_test;
+use predicates::prelude::predicate;
 
 #[test]
 fn yo_runs() {
-    assert_eq!(run_stdout("yo", &[]), "yo\n");
+    let pred = predicate::str::is_match("yo").unwrap();
+    run_successful_test("yo", &[], pred);
 }

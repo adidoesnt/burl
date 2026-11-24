@@ -4,6 +4,7 @@ use clap::Parser;
 #[command(name="preach", version="0.1.0", about="say it again for those on stdout")]
 struct PreachArgs {
     /// Vec<String> to print
+    #[arg(required(true))]
     strings: Vec<String>,
 
     /// Omit new line

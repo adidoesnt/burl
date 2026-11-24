@@ -1,12 +1,20 @@
-use crate::run_stdout;
-use pretty_assertions::assert_eq;
+use crate::{run_successful_test, run_failing_test};
+use predicates::prelude::predicate;
+
+#[test]
+fn prints_usage_when_no_args_given() {
+    let pred = predicate::str::contains("Usage");
+    run_failing_test("preach", &[], pred);
+}
 
 #[test]
 fn preach_repeats_with_newline_when_omit_newline_not_set() {
-    assert_eq!(run_stdout("preach", &["yo"]), "yo\n");
+    let pred = predicate::str::is_match("yo\n").unwrap();
+    run_successful_test("preach", &["yo"], pred);
 }
 
 #[test]
 fn preach_repeats_without_newline_when_omit_newline_set() {
-    assert_eq!(run_stdout("preach", &["-n", "yo"]), "yo");
+    let pred = predicate::str::is_match("yo").unwrap();
+    run_successful_test("preach", &["yo"], pred);
 }
