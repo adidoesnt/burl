@@ -1,1 +1,1 @@
-sup man -n
+sup man
