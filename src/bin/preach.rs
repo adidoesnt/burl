@@ -1,7 +1,11 @@
 use clap::Parser;
 
 #[derive(Parser, Debug)]
-#[command(name="preach", version="0.1.0", about="say it again for those on stdout")]
+#[command(
+    name = "preach",
+    version = "0.1.0",
+    about = "say it again for those on stdout"
+)]
 struct PreachArgs {
     /// Vec<String> to print
     #[arg(required(true))]
@@ -9,7 +13,7 @@ struct PreachArgs {
 
     /// Omit new line
     #[arg(short = 'n', name = "omit_newline")]
-    omit_newline: bool
+    omit_newline: bool,
 }
 
 /// Burl implementation of "echo".
