@@ -16,9 +16,6 @@ fn main() {
     let args = PreachArgs::parse();
     let output: String = args.strings.join(" ");
 
-    if args.omit_newline {
-        print!("{}", output);
-    } else {
-        println!("{}", output);
-    }
+    let ending = if args.omit_newline { "" } else { "\n" };
+    print!("{}{}", output, ending);
 }
